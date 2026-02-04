@@ -1,0 +1,5 @@
+* Flashcards
+
+My studying flashcards deck in Org-Mode[fn:1], used with Hashcards [[[https://github.com/eudoxia0/hashcards][1]], [[https://borretti.me/article/hashcards-plain-text-spaced-repetition][2]]].
+
+[fn:1] See issue [[https://github.com/eudoxia0/hashcards/issues/128][#128]] in Hashcards' repo.
