@@ -1,3 +1,1 @@
-* Flashcards
-
-My studying flashcards decks, used with [[https://github.com/eudoxia0/hashcards][Hashcards]].
+My studying flashcards decks, used with [[https://github.com/eudoxia0/hashcards][Hashcards ]].

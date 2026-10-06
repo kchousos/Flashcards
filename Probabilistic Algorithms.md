@@ -1,0 +1,121 @@
+<https://eclass.uoa.gr/courses/DI620/>  
+
+Q: Για μία διωνυμική ΤΜ με σταθερό $p$ και $n\to \infty$, ποια είναι η απόκλιση της μέσης τιμής;  
+A: $\Theta(\sqrt{n})$  
+
+Q: Ποια είναι η συνάρτηση πιθανότητας της $X\sim \mathrm{Ber}(p)$;  
+A: $\Pr[X=1]=p,\quad \Pr[X=0]=1-p$  
+
+Q: Ποια είναι η μέση τιμή της $X\sim \mathrm{Ber}(p)$;  
+A: $\mathbb{E}[X]=p$  
+
+Q: Ποια είναι η διασπορά της $X\sim \mathrm{Ber}(p)$;  
+A: $\mathrm{Var}(X)=p(1-p)$  
+
+Q: Για ποια τιμή του $p$ μεγιστοποιείται η διασπορά της Bernoulli και ποια είναι η μέγιστη τιμή της;  
+A: Για $p=\tfrac12$, με $\mathrm{Var}(X)=\tfrac14$  
+
+Q: Ποια είναι η απόκλιση της μέσης τιμής μιας Bernoulli με σταθερό $p\in(0,1)$;  
+A: $\Theta(1)$  
+
+Q: Τι ισχύει για τη δείκτρια τυχαία μεταβλητή $\mathbf{1}_A$ ενός ενδεχομένου $A$;  
+A: Είναι $\mathrm{Ber}(\Pr[A])$, άρα $\mathbb{E}[\mathbf{1}_A]=\Pr[A]$  
+
+Q: Ποια είναι η ροπογεννήτρια της $\mathrm{Ber}(p)$;  
+A: $M_X(t)=1-p+pe^{t}$  
+
+
+# Διωνυμική $\mathrm{Bin}(n,p)$
+
+Q: Ποια είναι η συνάρτηση πιθανότητας της $X\sim \mathrm{Bin}(n,p)$;  
+A: $\Pr[X=k]=\binom{n}{k}p^k(1-p)^{n-k},\quad k=0,\dots,n$  
+
+Q: Πώς γράφεται η $\mathrm{Bin}(n,p)$ ως άθροισμα;  
+A: $X=\sum_{i=1}^{n}X_i$, όπου $X_i$ ανεξάρτητες $\mathrm{Ber}(p)$  
+
+Q: Ποια είναι η μέση τιμή της $X\sim \mathrm{Bin}(n,p)$;  
+A: $\mathbb{E}[X]=np$  
+
+Q: Ποια είναι η διασπορά της $X\sim \mathrm{Bin}(n,p)$;  
+A: $\mathrm{Var}(X)=np(1-p)$  
+
+Q: Για μία διωνυμική ΤΜ με σταθερό $p$ και $n\to \infty$, ποια είναι η απόκλιση της μέσης τιμής;  
+A: $\Theta(\sqrt{n})$  
+
+Q: Για διωνυμική ΤΜ με σταθερό $p$, πώς συμπεριφέρεται η σχετική απόκλιση $\sigma/\mu$ καθώς $n\to\infty$;  
+A: $\dfrac{\sigma}{\mu}=\sqrt{\dfrac{1-p}{np}}=\Theta\!\left(\dfrac{1}{\sqrt{n}}\right)\to 0$ (συγκέντρωση γύρω από τη μέση τιμή)  
+
+Q: Ποιο φράγμα Chernoff ισχύει για $X\sim\mathrm{Bin}(n,p)$, $\mu=np$, $0<\delta\le 1$;  
+A: $\Pr[\,|X-\mu|\ge \delta\mu\,]\le 2e^{-\delta^2\mu/3}$  
+
+Q: Ποια κανονική κατανομή προσεγγίζει τη $\mathrm{Bin}(n,p)$ για μεγάλο $n$ και σταθερό $p$;  
+A: $\mathcal{N}\big(np,\;np(1-p)\big)$ (Κεντρικό Οριακό Θεώρημα)  
+
+Q: Πότε προσεγγίζεται η $\mathrm{Bin}(n,p)$ από Poisson και με ποια παράμετρο;  
+A: Όταν $n\to\infty$, $p\to0$ με $np\to\lambda$. Τότε προσεγγίζεται από $\mathrm{Poisson}(\lambda)$  
+
+Q: Ποια είναι η ροπογεννήτρια της $\mathrm{Bin}(n,p)$;  
+A: $M_X(t)=(1-p+pe^{t})^{n}$  
+
+
+# Poisson $\mathrm{Poisson}(\lambda)$
+
+Q: Ποια είναι η συνάρτηση πιθανότητας της $X\sim \mathrm{Poisson}(\lambda)$;  
+A: $\Pr[X=k]=\dfrac{e^{-\lambda}\lambda^{k}}{k!},\quad k=0,1,2,\dots$  
+
+Q: Ποια είναι η μέση τιμή και η διασπορά της $\mathrm{Poisson}(\lambda)$;  
+A: $\mathbb{E}[X]=\mathrm{Var}(X)=\lambda$  
+
+Q: Για $X\sim\mathrm{Poisson}(\lambda)$ με $\lambda\to\infty$, ποια είναι η απόκλιση της μέσης τιμής;  
+A: $\Theta(\sqrt{\lambda})$  
+
+Q: Ποια είναι η σχετική απόκλιση $\sigma/\mu$ της $\mathrm{Poisson}(\lambda)$;  
+A: $\dfrac{1}{\sqrt{\lambda}}\to 0$ καθώς $\lambda\to\infty$  
+
+Q: Αν $X\sim\mathrm{Poisson}(\lambda_1)$ και $Y\sim\mathrm{Poisson}(\lambda_2)$ ανεξάρτητες, ποια είναι η κατανομή του $X+Y$;  
+A: $\mathrm{Poisson}(\lambda_1+\lambda_2)$  
+
+Q: Ποια είναι η $\Pr[X=0]$ για $X\sim\mathrm{Poisson}(\lambda)$;  
+A: $e^{-\lambda}$  
+
+Q: Ποια κανονική κατανομή προσεγγίζει την $\mathrm{Poisson}(\lambda)$ για μεγάλο $\lambda$;  
+A: $\mathcal{N}(\lambda,\lambda)$  
+
+Q: Ποια είναι η ροπογεννήτρια της $\mathrm{Poisson}(\lambda)$;  
+A: $M_X(t)=e^{\lambda(e^{t}-1)}$  
+
+Q: Ποιο φράγμα Chernoff ισχύει για $X\sim\mathrm{Poisson}(\lambda)$ και $\delta>0$ (άνω ουρά);  
+A: $\Pr[X\ge(1+\delta)\lambda]\le\left(\dfrac{e^{\delta}}{(1+\delta)^{1+\delta}}\right)^{\lambda}$  
+
+
+# Γεωμετρική $\mathrm{Geom}(p)$
+
+Q: Ποια είναι η συνάρτηση πιθανότητας της $X\sim\mathrm{Geom}(p)$ (αριθμός δοκιμών μέχρι την πρώτη επιτυχία);  
+A: $\Pr[X=k]=(1-p)^{k-1}p,\quad k=1,2,\dots$  
+
+Q: Ποια είναι η μέση τιμή της $X\sim\mathrm{Geom}(p)$;  
+A: $\mathbb{E}[X]=\dfrac{1}{p}$  
+
+Q: Ποια είναι η διασπορά της $X\sim\mathrm{Geom}(p)$;  
+A: $\mathrm{Var}(X)=\dfrac{1-p}{p^{2}}$  
+
+Q: Για $X\sim\mathrm{Geom}(p)$ με $p\to0$, ποια είναι η απόκλιση της μέσης τιμής;  
+A: $\Theta(1/p)$, δηλαδή της ίδιας τάξης με τη μέση τιμή (δεν υπάρχει συγκέντρωση)  
+
+Q: Ποια είναι η σχετική απόκλιση $\sigma/\mu$ της $\mathrm{Geom}(p)$;  
+A: $\sqrt{1-p}\to 1$ καθώς $p\to 0$  
+
+Q: Ποια είναι η $\Pr[X>k]$ για $X\sim\mathrm{Geom}(p)$;  
+A: $(1-p)^{k}$  
+
+Q: Ποια ιδιότητα έχει η γεωμετρική κατανομή ως προς το «ξεχνάω το παρελθόν»;  
+A: Έλλειψη μνήμης: $\Pr[X>m+k\mid X>m]=\Pr[X>k]$  
+
+Q: Ποια φράγματα ισχύουν για την ουρά της $\mathrm{Geom}(p)$ σε σχέση με την εκθετική κατανομή;  
+A: $\Pr[X>k]=(1-p)^{k}\le e^{-pk}$  
+
+Q: Ποια είναι η ροπογεννήτρια της $\mathrm{Geom}(p)$ (για $t<-\ln(1-p)$);  
+A: $M_X(t)=\dfrac{pe^{t}}{1-(1-p)e^{t}}$  
+
+Q: Πώς εφαρμόζεται η γεωμετρική κατανομή στο πρόβλημα του συλλέκτη κουπονιών;  
+A: Ο χρόνος για το $i$-οστό νέο κουπόνι είναι $\mathrm{Geom}\!\left(\tfrac{n-i+1}{n}\right)$, άρα $\mathbb{E}[T]=\sum_{i=1}^{n}\dfrac{n}{n-i+1}=nH_n=\Theta(n\ln n)$

@@ -142,7 +142,7 @@ C: \(\mathbb E [Z_r] =\) [\(ptq\)].
 
 C: Upper bound \(\mathbb E[Z_r] <\) [\(\frac{t}{n-t} \frac{f}{1-f}\)].
 
-C: Lower bound \(\mathbb E [Y_r] \ge\) [\(q(n-t)p(1-p)^{q(n-t)-1} \ge f(1-f)\)].
+C: Lower bound \(\mathbb E [Y_r] \ge\) [\(q(n-t)p(1-p)^{q(n-t-1)} \ge f(1-f)\)].
 
 Q: lower + upper bound του \(\mathbb E [X_r]\)
 A: \[(1-f)pq(n-t)<f < pq(n-t).\]
