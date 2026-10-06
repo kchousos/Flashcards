@@ -1,5 +1,5 @@
 #+title: Flashcards Θεωρίας Παιγνίων
-#+author: Konstantinos Chousos
+#+author: Κωνσταντίνος Χούσος
 
-https://eclass.uoa.gr/courses/MATH806/
+https://eclass.uoa.gr/courses/MATH806/, Χειμώνας 2026-2027.
 

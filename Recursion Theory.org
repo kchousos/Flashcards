@@ -1,4 +1,4 @@
 #+title: Flashcards Θεωρίας Αναδρομής
-#+author: Konstantinos Chousos
+#+author: Κωνσταντίνος Χούσος
 
-https://eclass.uoa.gr/courses/MATH227/
+https://eclass.uoa.gr/courses/MATH227/, Χειμώνας 2026-2027.

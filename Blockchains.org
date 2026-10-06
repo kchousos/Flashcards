@@ -1,9 +1,9 @@
-# -*- mode: org; -*-
-#+title: Blockchain foundations flashcards
+#+title: Blockchain Foundations flashcards
+#+author: Κωνσταντίνος Χούσος
 
-Course note: [[20260215225759]]
+https://www.marabu.dev/, Άνοιξη 2025-2026.
 
---------------------
+
 * Probabilities
 
 Q: Union bound
@@ -22,13 +22,13 @@ A: Για ανά ζεύγη ανεξάρτητες boolean ΤΜ (Bernoulli trial
   \Pr[X \ge (1+\epsilon) \mu] \le e^{-\frac{\epsilon^2 \mu n}{3}}.
   \]
 
---------------------
+
 * Signatures
 
 Q: Existential forgery game (άτυπα)
 A: Ο αντίπαλος \(\mathcal{A}\) δεν μπορεί να παράξει καινούργια έγκυρη υπογραφή, ακόμα και με signing oracle για άλλα μηνύματα.
 
---------------------
+
 * Hash functions
 
 C: 2nd pre-image resistance [⇒] pre-image resistance.
@@ -37,15 +37,15 @@ C: Pre-image resistance [⇐] 2nd pre-image resistance.
 
 C: Collision resistance [⇒] 2nd preimage resistance [⇒] preimage resistance.
 
---------------------
+
 * Network
 
 Q: Sybil attack
 A: Περικύκλωση ενός honest node από bot nodes του adversary (spamming).
 
-  **Δεν σπάει** το non-eclipsing assumption.
+  *Δεν σπάει* το non-eclipsing assumption.
 
---------------------
+
 * Chains
 
 C: Υπό καθεστώς ορίου στο block size, ένας ορθολογικός miner συμπεριλαμβάνει πρώτα τις συναλλαγές με [την υψηλότερη αναλογία fees/byte].
@@ -53,7 +53,7 @@ C: Υπό καθεστώς ορίου στο block size, ένας ορθολογ
 Q: Common prefix
 A: \(\forall P_1, P_2 \in \mathcal{H}, r_1, r_2: r_1 \le r_2 \implies\) \[C^{P_1}_{r_1}[:-k] \preceq C^{P_2}_{r_2}.\]
 
---------------------
+
 * Proof-of-Work
 
 Q: Πιθανότητα επιτυχίας ενός query για δεδομένα \(\kappa, T\)
@@ -67,19 +67,19 @@ A: \[p = 1-(1-f)^{\frac{1}{q(n-t)}}.\]
 
 C: Αν διπλασιάσω το target \(T\), το expected growth rate \(f\) του longest chain θα είναι [λιγότερο από] το διπλό.
 
---------------------
+
 * Merkle trees
 
 Q: Length of proof size for one inclusion
 A: log₂(tree-height) · hash bit length
 
---------------------
+
 * Attacks
 
 Q: Rushing adversary
 A: Ελέγχει για κάθε party αν και πότε ακούει το οποιοδήποτε μήνυμα (μέσα στα όρια του network delay/έχοντας non-eclipsing assumption)
 
---------------------
+
 * Chain virtues / Backbone protocol
 
 Q: Με τι population δουλεύει το environment του backbone protocol;
@@ -90,15 +90,14 @@ A: Random oracle που κρατάει μετρητή των queries ανά part
 
 Q: Random oracle pseudocode
 A:
-
-```
+  #+begin_src 
   T ← {}
 
   def H(x):
       if x ∉ T
           T[x] ←$— {0, 1}𞀹
       return x
-```
+  #+end_src
 
 Q: Safety
 A: \(\forall P_1, P_2 \forall r_1, r_2:\)
@@ -168,7 +167,7 @@ A: \[3\epsilon + 3f \le \delta ~\Longrightarrow~ \epsilon=f = \frac{\delta}{6}.\
 C: \(\lambda \ge\) [\(\frac{2}{f}\)].
 
 Q: Typicality (typical executions)
-A: Μία εκτέλεση είναι *τυπική* αν για οποιοδήποτε σύνολο \(S\) συνεχόμενων γύρων με \(|S| \ge \lambda\), ισχύουν τα:
+A: Μία εκτέλεση είναι /τυπική/ αν για οποιοδήποτε σύνολο \(S\) συνεχόμενων γύρων με \(|S| \ge \lambda\), ισχύουν τα:
 
   1. \((1-\epsilon)\mathbb E[X(S)] < X(S) < (1+\epsilon) \mathbb E [X(S)]\),
 
@@ -176,7 +175,7 @@ A: Μία εκτέλεση είναι *τυπική* αν για οποιοδή�
 
   3. \(Z(S) < (1+\epsilon) \mathbb E [Z(S)]\),
 
-  4. Το random oracle είναι *causal*.
+  4. Το random oracle είναι /causal/.
 
 Q: Chain growth theorem
 A: Σε typical executions, έχουμε chain growth με \(s=\lambda\) και \(\tau=(1-\epsilon)f\).
@@ -195,7 +194,7 @@ A: Safety + liveness
 Q: Availability
 A: Σε synchronous setting, όταν έχουμε sleepy validators, αν \(t< \beta n\) για τα online parties, το πρωτόκολλο είναι live.
 
---------------------
+
 * Light clients
 
 Q: Τι κατεβάζει ένα SPV light wallet και γιατί;
@@ -203,14 +202,14 @@ A: 1. Header κάθε block για επιβεβαίωση της αλυσίδα�
 
 2. Merkle proofs για transactions που αφορούν το wallet address
 
---------------------
+
 * Proof-of-Stake
 
 ** Longest chain (Ouroboros Praos)
 
 C: Σε PoS longest-chain puzzle, ένας adversary μπορεί να προτείνει [άπειρα] έγκυρα blocks.
 
-C: Ένα PoS longest chain πρωτόκολλο είναι *safe* και *live* για \(t<\)[\(\frac{n}{2}\)].
+C: Ένα PoS longest chain πρωτόκολλο είναι /safe/ και /live/ για \(t<\)[\(\frac{n}{2}\)].
 
 Q: Πιθανότητα των honest parties να βγάλουν ένα block, για δεδομένα \(n,t,p\) (PoS)
 A: \[f = 1-(1-p)^{n-t}.\]
@@ -238,7 +237,8 @@ A: Χρήση computational queries σε PoS πρωτόκολλα.
 Q: Τι αποτρέπει και τι επιτρέπει το PoS όσον αφορά grinding attacks;
 A: Αποτρέπει επιθέσεις στα tickets αλλά επιτρέπει επιθέσεις στα blocks ενός συγκεκριμένου slot.
 
-  ![Blocks grinding attack στο slot 5.](./Attachments/clipboard-20260615T155219.png)
+  [[file:Attachments/clipboard-20260615T155219.png]]
+Blocks grinding attack στο slot 5
 
 Q: Equivocation
 A: Παραγωγή/ψήφος πολλαπλών blocks για το ίδιο slot.
@@ -307,7 +307,7 @@ A: \[\phi(\omega)= 1-(1-f)^\omega,\]
 
   με πιθανότητα επιτυχίας ticket ίση με \(1-(1-\phi(\omega))^n\).
 
---------------------
+
 ** Quorum-based (Simplex)
 
 C: Simplex: round [≠] iteration.
@@ -327,26 +327,30 @@ A: Για \(n\) parties, με quorum threshold \(\frac{2n}{3}\), δεν μπορ
 Q: Simplex protocol (high-level)
 A: Ο παίκτης \(p\) όταν μπαίνει στο iteration \(h\):
 
-  1. **Proposal**: Ελέγχει αν είναι ο slot leader. Αν ναι, τότε προτείνει ένα block \(B=(s_h \| x \| h)\), με \(x\) το mempool, \(h\) το slot number, \(s_h\) οποιοδήποτε notarized block για το slot \(h-1\).
+  1. *Proposal*: Ελέγχει αν είναι ο slot leader. Αν ναι, τότε προτείνει ένα block \(B=(s_h \| x \| h)\), με \(x\) το mempool, \(h\) το slot number, \(s_h\) οποιοδήποτε notarized block για το slot \(h-1\).
 
-  2. **Timer**: Εκκινεί έναν τοπικό μετρητή \(T_h\) που λήγει μετά από χρόνο \(3\Delta\). Αν λήξει, ο παίκτης ψηφίζει dummy block.
+  2. *Timer*: Εκκινεί έναν τοπικό μετρητή \(T_h\) που λήγει μετά από χρόνο \(3\Delta\). Αν λήξει, ο παίκτης ψηφίζει dummy block.
 
-  3. **Voting**: Για το πρώτο proposal που θα δει από τον leader, κάνει validate το block. Αν όλα καλά, το ψηφίζει.
+  3. *Voting*: Για το πρώτο proposal που θα δει από τον leader, κάνει validate το block. Αν όλα καλά, το ψηφίζει.
 
-  4. **Finalization**: Όταν έχει ένα notarized block για το \(h\), περνάει στο iteration \(h+1\). Σταματάει το timer και στέλνει μήνυμα finalize.
+  4. *Finalization*: Όταν έχει ένα notarized block για το \(h\), περνάει στο iteration \(h+1\). Σταματάει το timer και στέλνει μήνυμα finalize.
 
-  5. **Confirmation**: Όταν το \(h\) γίνει finalized, το \(\mathcal{L}\) του chain που τελειώνει στο \(h\) γίνεται confirmed.
+  5. *Confirmation*: Όταν το \(h\) γίνει finalized, το \(\mathcal{L}\) του chain που τελειώνει στο \(h\) γίνεται confirmed.
 
 Q: Πόσο χρόνο θέλει ένα block για να γίνει από proposed → finalized στο πρωτόκολλο Simplex;
 A: \[3\Delta .\]
 
 C: Simplex: Δύο non-⊥ blocks στο ίδιο iteration \(h\) δεν μπορούν ποτέ να [είναι ταυτόχρονα notarized].
 
+  #+begin_export html
   <details>Quorum intersection argument για την απόδειξη.</details>
+  #+end_export
 
 C: Simplex: Αν σε ένα iteration \(h\) έχουμε notarized bot block \(\bot_h\), το \(h\) δεν μπορεί να [γίνει finalized].
 
+  #+begin_export html
   <details>No honest party votes for both \(\bot_h\) and \(\left\langle \mathrm{finalize}, h \right\rangle\). The result follows from quorum intersection argument.</details>
+  #+end_export
 
 Q: Simplex: Για να πάω στο επόμενο iteration, χρειάζομαι notarization ή finalization;
 A: Notarization
@@ -365,8 +369,8 @@ A: Safety under partial synchrony
 
 Q: Ιδιότητες του accountability
 A:
-  1. **Correctness**: safety violation → \(|J(M)|> \frac{1}{3}n\),
-  2. **No framing**: \(J(M) \cap \mathcal{H} = \emptyset\) για οποιοδήποτε \(M\), όπου \(\mathcal{H}\) τα honest parties.
+  1. *Correctness*: safety violation → \(|J(M)|> \frac{1}{3}n\),
+  2. *No framing*: \(J(M) \cap \mathcal{H} = \emptyset\) για οποιοδήποτε \(M\), όπου \(\mathcal{H}\) τα honest parties.
 
 Q: Slashing
 A: Καταστροφή των χρημάτων σου σε περίπτωση που το adjudication function σε χαρακτηρίσει adversary/misbehaving.
@@ -386,3 +390,7 @@ A: Το availability ισχύει για longest-chain πρωτόκολλα εν
 
 Q: Availability/Finality dilemma
 A: Κανένα πρωτόκολλο δεν μπορεί να έχει και τα δύο.
+
+# Local Variables:
+# eval: (progn (require 'ox-gfm) (add-hook 'after-save-hook #'org-gfm-export-to-markdown nil t))
+# End:
