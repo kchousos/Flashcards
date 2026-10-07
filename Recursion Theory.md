@@ -16,8 +16,7 @@ D: $\chi_{A}: B \to \{0,1\}$ ενός συνόλου $A\subseteq B$ με
     $$\chi_A (a) =\begin{cases}
     1,& a \in A \\
     0, & \text{otherwise}
-    \end{cases}
-    $$  
+    \end{cases}$$  
 
 C: Θεώρημα: Για κάθε σύνολο $A$ ισχύει ότι $|A|$[$<$]$\left| 2^A \right|$ .  
 
