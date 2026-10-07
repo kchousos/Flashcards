@@ -1,4 +1,4 @@
-<https://www.marabu.dev/>, Άνοιξη 2025-2026.  
+Διονύσης Ζήνδρος, «Blockchain Foundations». Άνοιξη 2025-2026. <https://www.marabu.dev/>.  
 
 
 # Probabilities
@@ -267,9 +267,6 @@ Q: Super safety
 A: Όλοι συμφωνούν απολύτως με όλους τους άλλους.  
 
 Κυρίως αφορά το safety σε PoS όσον αφορά το stake update ανάμεσα σε epochs.  
-
-Q: Τι σχέση έχουν τα coins και τα public keys;  
-A: Κάθε public key μπορεί να έχει ένα ή κανένα coin.  
 
 Q: Παραγωγή epoch randomness $\rho^j$  
 A: $$\rho^j = \bigoplus_{i=1} \rho_i^j \in \{0,1\}^{\kappa},\quad \rho_i^j = G(\rho^{j-1}\| r \| pk),$$  
