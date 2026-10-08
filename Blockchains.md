@@ -1,7 +1,9 @@
+# Blockchain Foundations, ΑΛΜΑ
+
 Διονύσης Ζήνδρος, «Blockchain Foundations». Άνοιξη 2025-2026. <https://www.marabu.dev/>.  
 
 
-# Probabilities
+## Probabilities
 
 Q: Union bound  
 A: Έστω τα ενδεχόμενα $X_1, X_2, \ldots, X_n$. Η πιθανότητα ένα από αυτά να τύχει φράζεται από το άθροισμα των αντίστοιχων πιθανοτήτων, δηλαδή:  
@@ -20,13 +22,13 @@ $$
   $$  
 
 
-# Signatures
+## Signatures
 
 Q: Existential forgery game (άτυπα)  
 A: Ο αντίπαλος $\mathcal{A}$ δεν μπορεί να παράξει καινούργια έγκυρη υπογραφή, ακόμα και με signing oracle για άλλα μηνύματα.  
 
 
-# Hash functions
+## Hash functions
 
 C: 2nd pre-image resistance [⇒] pre-image resistance.  
 
@@ -35,7 +37,7 @@ C: Pre-image resistance [⇐] 2nd pre-image resistance.
 C: Collision resistance [⇒] 2nd preimage resistance [⇒] preimage resistance.  
 
 
-# Network
+## Network
 
 Q: Sybil attack  
 A: Περικύκλωση ενός honest node από bot nodes του adversary (spamming).  
@@ -43,7 +45,7 @@ A: Περικύκλωση ενός honest node από bot nodes του adversary
 **Δεν σπάει** το non-eclipsing assumption.  
 
 
-# Chains
+## Chains
 
 C: Υπό καθεστώς ορίου στο block size, ένας ορθολογικός miner συμπεριλαμβάνει πρώτα τις συναλλαγές με [την υψηλότερη αναλογία fees/byte].  
 
@@ -51,7 +53,7 @@ Q: Common prefix
 A: $\forall P_1, P_2 \in \mathcal{H}, r_1, r_2: r_1 \le r_2 \implies$ $$C^{P_1}_{r_1}[:-k] \preceq C^{P_2}_{r_2}.$$  
 
 
-# Proof-of-Work
+## Proof-of-Work
 
 Q: Πιθανότητα επιτυχίας ενός query για δεδομένα $\kappa, T$  
 A: $$p=\frac{T}{2^{\kappa}}.$$  
@@ -65,19 +67,19 @@ A: $$p = 1-(1-f)^{\frac{1}{q(n-t)}}.$$
 C: Αν διπλασιάσω το target $T$, το expected growth rate $f$ του longest chain θα είναι [λιγότερο από] το διπλό.  
 
 
-# Merkle trees
+## Merkle trees
 
 Q: Length of proof size for one inclusion  
 A: log₂(tree-height) · hash bit length  
 
 
-# Attacks
+## Attacks
 
 Q: Rushing adversary  
 A: Ελέγχει για κάθε party αν και πότε ακούει το οποιοδήποτε μήνυμα (μέσα στα όρια του network delay/έχοντας non-eclipsing assumption)  
 
 
-# Chain virtues / Backbone protocol
+## Chain virtues / Backbone protocol
 
 Q: Με τι population δουλεύει το environment του backbone protocol;  
 A: Σταθερό  
@@ -192,7 +194,7 @@ Q: Availability
 A: Σε synchronous setting, όταν έχουμε sleepy validators, αν $t< \beta n$ για τα online parties, το πρωτόκολλο είναι live.  
 
 
-# Light clients
+## Light clients
 
 Q: Τι κατεβάζει ένα SPV light wallet και γιατί;  
 A: 1. Header κάθε block για επιβεβαίωση της αλυσίδας και του proof-of-work  
@@ -200,10 +202,10 @@ A: 1. Header κάθε block για επιβεβαίωση της αλυσίδα�
 1.  Merkle proofs για transactions που αφορούν το wallet address
 
 
-# Proof-of-Stake
+## Proof-of-Stake
 
 
-## Longest chain (Ouroboros Praos)
+### Longest chain (Ouroboros Praos)
 
 C: Σε PoS longest-chain puzzle, ένας adversary μπορεί να προτείνει [άπειρα] έγκυρα blocks.  
 
@@ -305,7 +307,7 @@ A: $$\phi(\omega)= 1-(1-f)^\omega,$$
 με πιθανότητα επιτυχίας ticket ίση με $1-(1-\phi(\omega))^n$.  
 
 
-## Quorum-based (Simplex)
+### Quorum-based (Simplex)
 
 C: Simplex: round [≠] iteration.  
 
